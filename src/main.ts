@@ -13,15 +13,11 @@ const config = createConfig({
         { 
             name: 'test_contract',
             path: './contracts/test_contract'
+        },
+        { 
+            name: 'test_contract_2',
+            path: './contracts/test_contract_2'
         }
-        // { 
-        //     name: 'test_contract_2',
-        //     path: './contracts/test_contract_2'
-        // }
-        // { 
-        //     name: 'WEIGHTEDPOOL_CONTRACT',
-        //     path: './contracts/WeightedPool'
-        // }
     ]
 });
 
@@ -30,8 +26,6 @@ const main = async () => {
     await buildContracts(config);
     const contractIds = await deployContracts(config, wallet);
     console.log("Contracts Deployed:", contractIds);
-    const res = await callSetAuthorizer(contractIds[0].contractId, wallet);
-    console.log(res);
 }
 
 main().then(() => process.exit);

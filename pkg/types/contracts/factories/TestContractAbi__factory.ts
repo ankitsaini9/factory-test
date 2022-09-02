@@ -115,6 +115,59 @@ const _abi = [
       },
     ],
   },
+  {
+    type: "function",
+    inputs: [],
+    name: "test_function_2",
+    outputs: [
+      {
+        name: "",
+        type: "struct Vec",
+        components: [
+          {
+            name: "buf",
+            type: "struct RawVec",
+            components: [
+              {
+                name: "ptr",
+                type: "u64",
+                components: null,
+                typeArguments: null,
+              },
+              {
+                name: "cap",
+                type: "u64",
+                components: null,
+                typeArguments: null,
+              },
+            ],
+            typeArguments: [
+              {
+                name: "T",
+                type: "u64",
+                components: null,
+                typeArguments: null,
+              },
+            ],
+          },
+          {
+            name: "len",
+            type: "u64",
+            components: null,
+            typeArguments: null,
+          },
+        ],
+        typeArguments: [
+          {
+            name: "T",
+            type: "u64",
+            components: null,
+            typeArguments: null,
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export class TestContractAbi__factory {

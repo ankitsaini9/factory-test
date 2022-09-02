@@ -2,7 +2,5 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { TestContractAbi } from "./TestContractAbi";
-export type { VaultAbi } from "./VaultAbi";
 
 export { TestContractAbi__factory } from "./factories/TestContractAbi__factory";
-export { VaultAbi__factory } from "./factories/VaultAbi__factory";

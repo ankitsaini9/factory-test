@@ -32,15 +32,24 @@ export type test_structOutput = { v1: VecOutput; v2: VecOutput };
 interface TestContractAbiInterface extends Interface {
   functions: {
     test_function: FunctionFragment;
+    test_function_2: FunctionFragment;
   };
 
   encodeFunctionData(
     functionFragment: "test_function",
     values?: undefined
   ): Uint8Array;
+  encodeFunctionData(
+    functionFragment: "test_function_2",
+    values?: undefined
+  ): Uint8Array;
 
   decodeFunctionData(
     functionFragment: "test_function",
+    data: BytesLike
+  ): DecodedValue;
+  decodeFunctionData(
+    functionFragment: "test_function_2",
     data: BytesLike
   ): DecodedValue;
 }
@@ -49,14 +58,24 @@ export class TestContractAbi extends Contract {
   interface: TestContractAbiInterface;
   prepareCall: {
     test_function(options?: ContractCallOptions): ContractCall;
+
+    test_function_2(options?: ContractCallOptions): ContractCall;
   };
   submit: {
     test_function(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<test_structOutput>;
+
+    test_function_2(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<VecOutput>;
   };
   submitResult: {
     test_function(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<TransactionResult<any>>;
+
+    test_function_2(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<TransactionResult<any>>;
   };
@@ -64,9 +83,17 @@ export class TestContractAbi extends Contract {
     test_function(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<test_structOutput>;
+
+    test_function_2(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<VecOutput>;
   };
   dryRunResult: {
     test_function(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<CallResult>;
+
+    test_function_2(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<CallResult>;
   };
@@ -74,9 +101,17 @@ export class TestContractAbi extends Contract {
     test_function(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<test_structOutput>;
+
+    test_function_2(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<VecOutput>;
   };
   simulateResult: {
     test_function(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<CallResult>;
+
+    test_function_2(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<CallResult>;
   };
@@ -84,4 +119,8 @@ export class TestContractAbi extends Contract {
   test_function(
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<test_structOutput>;
+
+  test_function_2(
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<VecOutput>;
 }

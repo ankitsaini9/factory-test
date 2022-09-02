@@ -9,6 +9,7 @@ struct test_struct {
 
 abi MyContract {
     fn test_function() -> test_struct;
+    fn test_function_2() -> Vec<u64>;
 }
 
 impl MyContract for Contract {
@@ -28,4 +29,9 @@ impl MyContract for Contract {
 
         res
     }
+
+    fn test_function_2() -> Vec<u64> {
+        ~Vec::new()
+    }
 }
+
