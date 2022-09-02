@@ -22,6 +22,8 @@ const main = async () => {
     await buildContracts(config);
     const contractIds = await deployContracts(config, wallet);
     console.log("Contracts Deployed:", contractIds);
+    const res = await callSetAuthorizer(contractIds[0].contractId, wallet);
+    console.log(res);
 }
 
 main().then(() => process.exit);
