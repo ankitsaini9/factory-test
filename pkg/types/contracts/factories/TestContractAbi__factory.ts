@@ -173,12 +173,16 @@ const _abi = [
 export class TestContractAbi__factory {
   static readonly abi = _abi;
   static createInterface(): TestContractAbiInterface {
-    return new Interface(_abi) as TestContractAbiInterface;
+    // return new Interface(_abi) as TestContractAbiInterface;
+    // tried a workaround
+    return new Interface(_abi) as any;
   }
   static connect(
     id: string,
     walletOrProvider: Wallet | Provider
   ): TestContractAbi {
-    return new Contract(id, _abi, walletOrProvider) as TestContractAbi;
+    // return new Contract(id, _abi, walletOrProvider) as TestContractAbi;
+    // tried a workaround
+    return new Contract(id, _abi, walletOrProvider) as any;
   }
 }
