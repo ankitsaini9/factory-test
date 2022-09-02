@@ -14,10 +14,6 @@ const config = createConfig({
             name: 'test_contract',
             path: './contracts/test_contract'
         }
-        // { 
-        //     name: 'test_contract_2',
-        //     path: './contracts/test_contract_2'
-        // }
     ]
 });
 
